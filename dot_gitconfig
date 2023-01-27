@@ -1,0 +1,16 @@
+[user]
+	email = mcsmonk@gmail.com
+	name = Sunghyun Jin
+	signingkey = mcsmonk
+[core]
+	precomposeunicode = true
+	quotepath = false
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true

@@ -1,0 +1,14 @@
+
+function endot {
+	echo $1
+	tar czf dotfiles.tar.gz $1
+	gpg -er mcsmonk@gmail.com dotfiles.tar.gz
+	rm dotfiles.tar.gz
+	rm -rf $1
+}
+
+function dedot {
+	gpg -do dotfiles.tar.gz dotfiles.tar.gz.gpg
+	tar xvf dotfiles.tar.gz
+	rm dotfiles.tar.gz*
+}
